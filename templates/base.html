@@ -12,7 +12,21 @@
     {% endblock %}
 </head>
 <body>
+    <!-- incluindo a barra de navegação -->
     {% include 'navbar.html' %}
+
+    <!-- pega a lista de mensagens e se existir alguma, exibe ela -->
+    <div class="container">
+        {% with mensagens = get_flashed_messages(with_categories=True) %}
+            {% if mensagens %}
+                {% for categoria, mensagem in mensagens %}
+                    <div class="alert {{categoria}}">
+                        {{ mensagem }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {%endwith%}
+    </div>
 
     {% block body %}
     {% endblock %}
