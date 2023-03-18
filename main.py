@@ -1,5 +1,6 @@
 from flask import Flask, render_template, url_for, request, flash, redirect
 from forms import FormLogin, FormCriarConta
+from flask_sqlalchemy import SQLAlchemy
 
 # instanciando a classe Flask
 app = Flask(__name__)
@@ -7,6 +8,9 @@ app = Flask(__name__)
 lista_usuarios = ['Thomas','Evelyn','Marcus','Johnny']
 
 app.config['SECRET_KEY'] = 'b480e6cf1f889e49d122f1a7de513f84'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///comunidade.db'
+
+database = SQLAlchemy(app)
 
 # decorator é uma função que começa com um @ 
 # e sempre vem antes de uma função para atribuir uma nova funcionalidade à ela
