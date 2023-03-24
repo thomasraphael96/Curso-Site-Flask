@@ -14,7 +14,8 @@ lista_usuarios = ['Thomas','Evelyn','Marcus','Johnny']
 # e sempre vem antes de uma função para atribuir uma nova funcionalidade à ela
 @app.route('/')
 def home():
-    return render_template('home.html')
+    posts = Post.query.all()
+    return render_template('home.html', posts=posts)
 
 @app.route('/contato')
 def contato():
