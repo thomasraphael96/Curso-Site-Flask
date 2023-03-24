@@ -7,9 +7,6 @@ import secrets
 import os
 from PIL import Image
 
-
-lista_usuarios = ['Thomas','Evelyn','Marcus','Johnny']
-
 # decorator é uma função que começa com um @ 
 # e sempre vem antes de uma função para atribuir uma nova funcionalidade à ela
 @app.route('/')
@@ -24,6 +21,7 @@ def contato():
 @app.route('/usuarios')
 @login_required
 def usuarios():
+    lista_usuarios = Usuario.query.all()
     return render_template('usuarios.html', lista_usuarios=lista_usuarios)
 
 # liberar o método POST para ser possível enviar informações para o site (utilizado nos forms). Ele vem bloqueado por segurança
