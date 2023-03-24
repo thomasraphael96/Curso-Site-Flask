@@ -3,19 +3,20 @@
   border: none;
   border-radius: 10px;
    
-  background-color: #fff;
+  background-color: rgb(189, 173, 240);
 }
 
 .stats{
 
-      background: #f2f5f8 !important;
-
+    background: rgb(189, 173, 240)!important;
+    justify-content: space-between;
+    width: 150px;
     color: #000 !important;
 }
 
 .articles{
   font-size:10px;
-  color: #a1aab9;
+  color: #000000;
 }
 
 .number1{
@@ -23,7 +24,7 @@
 }
 
 .followers{
-    font-size:10px;
+  font-size:10px;
   color: #a1aab9;
 
 }
@@ -34,7 +35,7 @@
 
 .rating{
     font-size:10px;
-  color: #a1aab9;
+  color: #000000;
 }
 
 .number3{
