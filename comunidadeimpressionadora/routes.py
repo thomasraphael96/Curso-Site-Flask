@@ -11,7 +11,7 @@ from PIL import Image
 # e sempre vem antes de uma função para atribuir uma nova funcionalidade à ela
 @app.route('/')
 def home():
-    posts = Post.query.all()
+    posts = Post.query.order_by(Post.id.desc())
     return render_template('home.html', posts=posts)
 
 @app.route('/contato')
